@@ -10,6 +10,8 @@ import io.qameta.allure.Step;
 
 public class LoginPage {
 	
+	
+	int i = 10;
 	private WebDriver driver;
 	private ElementUtil eleUtil;
 	
