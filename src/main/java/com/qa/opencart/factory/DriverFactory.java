@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -25,25 +28,31 @@ public class DriverFactory {
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 	
+	private static final Logger log = LogManager.getLogger(DriverFactory.class);
+	
+	public OptionsManager optionsManager;
+	
 	public WebDriver initDriver(Properties prop) {
 		String browserName =  prop.getProperty("browser");
 		highlightEle = prop.getProperty("highlight");
-		System.out.println("browser name :" + browserName );
+		optionsManager = new OptionsManager(prop);
+		//System.out.println("browser name :" + browserName );
+		log.info("browser name :" + browserName );
 		
 		switch (browserName.trim().toLowerCase()) {
 		case "chrome":
 			//driver = new ChromeDriver();
-			tlDriver.set( new ChromeDriver());
+			tlDriver.set( new ChromeDriver(optionsManager.getChromeOptions()));
 			break;
 			
 		case "edge":
 			//driver = new EdgeDriver();
-			tlDriver.set( new EdgeDriver());
+			tlDriver.set( new EdgeDriver(optionsManager.getEdgeOptions()));
 			break;
 			
 		case "firefox":
 			//driver = new FirefoxDriver();
-			tlDriver.set( new FirefoxDriver());
+			tlDriver.set( new FirefoxDriver(optionsManager.getFirefoxOptions()));
 			break;
 			
 		case "safari":
@@ -53,6 +62,7 @@ public class DriverFactory {
 
 		default:
 			System.out.println(AppError.INVALID_BROWSER_MESG);
+			log.error(AppError.INVALID_BROWSER_MESG);
 			throw new FrameworkException("=====INVALID BROWSER");
 		}
 		
@@ -65,6 +75,7 @@ public class DriverFactory {
 		return getDriver();
 		
 	}
+	
 	
 	
 	

@@ -1,5 +1,7 @@
 package com.qa.opencart.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,6 +24,7 @@ public class LoginPage {
 	private final By header = By.tagName("h2");
 	private final By registerLink = By.linkText("Register");
 	
+	private static final Logger log = LogManager.getLogger(LoginPage.class);
 	
 	
 	public LoginPage(WebDriver driver) {
@@ -33,7 +36,8 @@ public class LoginPage {
 	public  String getLoginPageTitle() {
 		   //String title = driver.getTitle();
 		   String title = eleUtil.waitForTitleIs(AppConstants.LOGIN_PAGE_TITLE, AppConstants.DEFAULT_SHORT_WAIT);
-		   System.out.println(title);
+		   //System.out.println(title);
+		   log.info("login page title: " + title);
 		   return title;
 	}
 	
@@ -41,7 +45,8 @@ public class LoginPage {
 	public String getLoginPageURL() {
 		   //String URL = driver.getCurrentUrl();
 		   String URL = eleUtil.waitForURLContains(AppConstants.LOGIN_PAGE_FRACTION_URL, AppConstants.DEFAULT_SHORT_WAIT);
-		   System.out.println(URL);
+		   //System.out.println(URL);
+		   log.info("login page url : " + URL);
 		   return URL;	  
 	}
 	
@@ -59,7 +64,8 @@ public class LoginPage {
 
 	@Step("login with correct username: {0} and password: {1}")
 	public AccountsPage doLogin(String appusername,String apppassword) {
-		System.out.println("Application crendentials :" + appusername + ":" + apppassword);
+		//System.out.println("Application crendentials :" + appusername + ":" + apppassword);
+		log.info("application credentials: " + appusername + " : " + "*********");
 //		driver.findElement(emailID).sendKeys(appusername);
 //		driver.findElement(password).sendKeys(apppassword);
 //		driver.findElement(loginBtn).click();
@@ -74,8 +80,9 @@ public class LoginPage {
 	
 	@Step("navigating to register page...")
 	public RegisterPage nagigateToRegiterPage() {
-		
+		log.info("trying to navigating to register page...");
 		eleUtil.waitForElementVisible(registerLink,AppConstants.DEFAULT_MEDIUM_WAIT).click();
+		
 		return new RegisterPage(driver);
 	}
 	

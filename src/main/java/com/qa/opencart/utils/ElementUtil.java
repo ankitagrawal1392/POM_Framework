@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -31,6 +33,7 @@ public class ElementUtil {
 	private Actions act;
 	private JavaScriptUtil jsUtil;
 
+	private static final Logger log = LogManager.getLogger(ElementUtil.class);
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
 		act = new Actions(driver);
@@ -39,7 +42,9 @@ public class ElementUtil {
 	}
 
 	public void doSendKeys(By locator, String value) {
+		log.info("entering the value : " + value + " into locator: " + locator);
 		if (value == null) {
+			log.error("value : " + value + " is null...");
 			throw new ElementException("===value can not be null====");
 		}
 		getElement(locator).sendKeys(value);
@@ -50,6 +55,7 @@ public class ElementUtil {
 	}
 
 	public void doClick(By locator) {
+		log.info("clicking on element using : " + locator);
 		getElement(locator).click();
 	}
 
@@ -103,6 +109,8 @@ public class ElementUtil {
 
 	public WebElement getElement(By locator) {
 		WebElement element = driver.findElement(locator);
+		log.info("element is found using : " + locator);
+		
 		if (Boolean.parseBoolean(DriverFactory.highlightEle)) {
 			jsUtil.flash(element);
 		}
@@ -332,6 +340,7 @@ public class ElementUtil {
 
 	@Step("waiting for element :{0} visible within the timeout: {1}")
 	public WebElement waitForElementVisible(By locator, int timeout) {
+		log.info("waiting for element using By locator: " + locator + " within time out: " + timeout);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
