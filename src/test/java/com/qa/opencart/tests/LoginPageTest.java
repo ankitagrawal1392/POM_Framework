@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.constants.AppConstants;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -31,7 +32,7 @@ public class LoginPageTest extends BaseTest {
 	public  void loginPageTitleTest() {
 		String actualTitle = loginPage.getLoginPageTitle();
 		ChainTestListener.log("Login Page Title" + actualTitle);
-		Assert.assertEquals(actualTitle, "Account Login");
+		Assert.assertEquals(actualTitle,AppConstants.LOGIN_PAGE_TITLE);
 	}
 	
 	
@@ -42,7 +43,8 @@ public class LoginPageTest extends BaseTest {
 	public  void loginPageURLTest() {
 		String actualURL = loginPage.getLoginPageURL();
 		ChainTestListener.log("Login page URl" + actualURL);
-		Assert.assertTrue(actualURL.contains("account/login"));
+		Assert.assertTrue(actualURL.contains(AppConstants.LOGIN_PAGE_FRACTION_URL));
+		
 	}
 	
 	@Description("forgot password link exist test....")
