@@ -86,7 +86,7 @@ public class DriverFactory {
 	public Properties intProp() {
 		prop = new Properties();
 		try {
-			FileInputStream fi = new FileInputStream("./src/test/resourcess/config/config.properties");
+			FileInputStream fi = new FileInputStream("./src/test/resources/config/config.properties");
 			prop.load(fi);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

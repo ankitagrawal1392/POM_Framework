@@ -11,7 +11,7 @@ import com.opencsv.exceptions.CsvException;
 public class CsvUtil {
 	
 	
-	private static final String CSV_PATH = "./src/test/resourcess/testdata/";
+	private static final String CSV_PATH = "./src/test/resources/testdata/";
 
 	private static List<String[]> rows;
 

@@ -128,7 +128,7 @@
 
 					<suiteXmlFiles>
 						
-					 <!--suiteXmlFile>src/test/resourcess/testrunners/testng_regression.xml</suiteXmlFile> -->
+					 <!--suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile> -->
 						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 
