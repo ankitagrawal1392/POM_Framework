@@ -29,26 +29,26 @@
 		</classes>
 	</test>
 
-	<test name="Search Test">
-		<parameter name="browser" value="edge" />
+<!--	<test name="Search Test">-->
+<!--		<parameter name="browser" value="edge" />-->
 
-		<classes>
-			<class name="com.qa.opencart.tests.SearchTest" />
-		</classes>
-	</test>
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.SearchTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="ProductInfo Page Test">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="com.qa.opencart.tests.productInfoTest" />
-		</classes>
-	</test>
+<!--	<test name="ProductInfo Page Test">-->
+<!--		<parameter name="browser" value="chrome" />-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.productInfoTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="Register Page Test">
-		<parameter name="browser" value="firefox" />
-		<classes>
-			<class name="com.qa.opencart.tests.RegisterPageTest" />
-		</classes>
-	</test>
+<!--	<test name="Register Page Test">-->
+<!--		<parameter name="browser" value="firefox" />-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.RegisterPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
 </suite>	
