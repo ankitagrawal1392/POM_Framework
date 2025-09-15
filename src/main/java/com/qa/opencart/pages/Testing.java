@@ -7,6 +7,8 @@ public class Testing {
 	String a = "Test";
 	int i = 10;
 
+	
+	char s= 'm';
 
 	
 
