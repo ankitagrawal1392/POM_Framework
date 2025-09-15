@@ -4,7 +4,7 @@ public class Testing {
 	
 	
 
-	String a = "Test";
+	String a = "Test  ";
 	int i = 10;
 
 	
