@@ -40,7 +40,7 @@ public class BaseTest {
 	public void stepUp(@Optional("chrome") String browserName) {
 		
 		df = new DriverFactory();
-		prop = df.intProp();
+		prop = df.initProp();
 		
 		if(browserName!=null) {
 			prop.setProperty("browser", browserName);
