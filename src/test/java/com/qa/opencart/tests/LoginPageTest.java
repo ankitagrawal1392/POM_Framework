@@ -24,7 +24,7 @@ public class LoginPageTest extends BaseTest {
 	
 	
 	
-	@Description("login page title test.....")
+	@Description("login page title test....")
 	@Link("")
 	@Owner("Ankit Agrawal")
 	@Severity(SeverityLevel.MINOR)
