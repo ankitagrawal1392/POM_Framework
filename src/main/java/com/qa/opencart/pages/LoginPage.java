@@ -35,7 +35,7 @@ public class LoginPage {
 		eleUtil = new ElementUtil(driver);
 	}
 	
-	@Step("getting login page title....")
+	@Step("getting login page title.....")
 	public  String getLoginPageTitle() {
 		   //String title = driver.getTitle();
 		   String title = eleUtil.waitForTitleIs(AppConstants.LOGIN_PAGE_TITLE, AppConstants.DEFAULT_SHORT_WAIT);
