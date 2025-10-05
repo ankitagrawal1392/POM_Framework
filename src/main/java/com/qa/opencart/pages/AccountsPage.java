@@ -40,7 +40,7 @@ public class AccountsPage {
 	}
 
 	public Boolean isLogoutLinkExist() {
-		// return driver.findElement(logoutLink).isDisplayed();
+		// return driver.findElement(logoutLink).isDisplayed() ;
 		WebElement logoutEle = eleUtil.waitForElementVisible(logoutLink, AppConstants.DEFAULT_MEDIUM_WAIT);
 		return eleUtil.isElementDisplayed(logoutEle);
 
