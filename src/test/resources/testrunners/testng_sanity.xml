@@ -15,11 +15,10 @@
 	</listeners>
 
 
-	<test name="Login Page Test_chrome">
+	<test name="Register Page Test">
 		<parameter name="browser" value="chrome" />
-
 		<classes>
-			<class name="com.qa.opencart.tests.LoginPageTest" />
+			<class name="com.qa.opencart.tests.RegisterPageTest" />
 		</classes>
 	</test>
 
@@ -32,13 +31,6 @@
 		</classes>
 	</test>
 	
-	<test name="Accounts Page Test">
-
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="com.qa.opencart.tests.AccountsPageTest" />
-		</classes>
-	</test>
 
 
 </suite>	
