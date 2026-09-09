@@ -25,9 +25,10 @@ public class productInfoTest  extends BaseTest{
 	public Object[][] getProducts() {
 		return new Object[][] {
 			{"macbook", "MacBook Pro"},
-			{"samsung", "Samsung SyncMaster 941BW"},
-			{"imac", "iMac"},
-			{"canon", "Canon EOS 5D"}
+		    {"samsung", "Samsung SyncMaster 941BW"}, 
+		    {"imac", "iMac"}, 
+		    {"canon","Canon EOS 5D"}
+				 
 		};
 	}
 		

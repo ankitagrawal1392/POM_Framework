@@ -2,6 +2,7 @@ package com.qa.opencart.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
@@ -13,12 +14,22 @@ public class SearchTest extends BaseTest{
 		accPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));;
 	}
 	
-	@Test
-	public void searchTest() {
-		searchResultPage = accPage.doSearch("macbook");
-		prductInfoPage = searchResultPage.selectProduct("MacBook Pro");
+	@DataProvider
+	public Object doSearch() {
+		return new Object[][] {
+			{"macbook","MacBook Pro"}
+					
+		};
+		
+		
+	}
+	
+	@Test(dataProvider = "doSearch")
+	public void searchTest(String CompanyName,String ProductName) {
+		searchResultPage = accPage.doSearch(CompanyName);
+		prductInfoPage = searchResultPage.selectProduct(ProductName);
 		String actualHeader = prductInfoPage.getProductHeader();
-		Assert.assertEquals(actualHeader, "MacBook Pro");
+		Assert.assertEquals(actualHeader, ProductName);
 	}
 
 }
