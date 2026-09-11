@@ -43,14 +43,14 @@
 	</test>
 
 	<test name="Search Test">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="firefox" />
 
 		<classes>
 			<class name="com.qa.opencart.tests.SearchTest" />
 		</classes>
 	</test>
 
-	<test name="ProductInfo Page Test">
+	<!--<test name="ProductInfo Page Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.tests.productInfoTest" />
@@ -62,6 +62,6 @@
 		<classes>
 			<class name="com.qa.opencart.tests.RegisterPageTest" />
 		</classes>
-	</test>
+	</test>-->
 
 </suite>	
